@@ -1,4 +1,4 @@
-const ENDPOINT = ""; 
+const ENDPOINT = "https://script.google.com/macros/s/AKfycby_ig-LZE7uoj-kr9NLbAmylZhn7kr9YeiWxir4vG3dg6r0knWMYE5BKBH8t_imQ84P/exec";
 // 若要把學生答案自動寫入 Google 試算表，將上面的 ENDPOINT 換成你的 Google Apps Script Web App URL。
 // 留空也可以使用：測驗完成後答案不會離開學生裝置。
 
