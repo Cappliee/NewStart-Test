@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6efe3">
+  <title>寫下第一頁｜我的高中國文課使用說明書</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <div class="grain"></div>
+
+    <section id="welcome" class="screen active">
+      <div class="cover">
+        <div class="cover-deco deco-book">📖</div>
+        <div class="eyebrow">HIGH SCHOOL CHINESE • FIRST PAGE</div>
+        <h1>寫下第一頁</h1>
+        <p class="subtitle">我的高中國文課使用說明書</p>
+        <div class="highlight">高中三年，是一本正在書寫的小說</div>
+        <p class="lead">
+          今天，我想先認識你。<br>
+          不只知道你的名字，也想知道你怎麼看國文、期待什麼，以及有什麼小小的擔心。
+        </p>
+        <div class="meta-row">
+          <span>約 3–5 分鐘</span>
+          <span>沒有標準答案</span>
+          <span>真心回答就好</span>
+        </div>
+        <button class="primary-btn" id="startBtn">開始寫下第一頁 →</button>
+        <p class="privacy-note">你填寫的內容會送給老師，請放心寫真實的想法；不必回答任何你不想分享的私人事情。</p>
+      </div>
+    </section>
+
+    <section id="quiz" class="screen">
+      <header class="quiz-header">
+        <div class="brand">寫下第一頁</div>
+        <div class="progress-wrap">
+          <div class="progress-bar"><span id="progress"></span></div>
+          <span id="progressText">1 / 5</span>
+        </div>
+      </header>
+
+      <form id="quizForm" novalidate>
+        <!-- STEP 1 -->
+        <div class="step active" data-step="1">
+          <div class="step-kicker">01 / 關於我</div>
+          <h2>先讓我知道，<br>你是誰。</h2>
+          <p class="step-intro">姓名之外，我也想知道你希望被怎麼認識。</p>
+
+          <label>班級 <span class="required">*</span></label>
+          <input name="className" type="text" placeholder="例如：一年三班" required>
+
+          <label>座號 <span class="required">*</span></label>
+          <input name="seat" type="text" inputmode="numeric" placeholder="例如：17" required>
+
+          <label>姓名 <span class="required">*</span></label>
+          <input name="name" type="text" placeholder="請輸入你的姓名" required>
+
+          <label>你希望老師怎麼稱呼你？</label>
+          <input name="preferredName" type="text" placeholder="沒有特別的也可以寫本名">
+
+          <label>如果只能用三個詞介紹現在的自己，你會選……</label>
+          <input name="selfWords" type="text" placeholder="例如：慢熟、愛笑、想很多">
+
+          <label>最近最讓你開心的一件事是？</label>
+          <textarea name="happyThing" maxlength="200" placeholder="小事也可以。"></textarea>
+
+          <label>最近正在喜歡什麼？</label>
+          <textarea name="favoriteThing" maxlength="200" placeholder="作品、人物、音樂、運動、遊戲、興趣……都可以"></textarea>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step" data-step="2">
+          <div class="step-kicker">02 / 關於國文</div>
+          <h2>如果「國文」<br>是一個人……</h2>
+          <p class="step-intro">你覺得你們現在比較像什麼關係？</p>
+
+          <div class="option-grid" data-radio-group="chineseRelationship">
+            <button type="button" class="choice" data-value="很熟的老朋友">📖 很熟的老朋友</button>
+            <button type="button" class="choice" data-value="偶爾聊天的朋友">☕ 偶爾聊天的朋友</button>
+            <button type="button" class="choice" data-value="想靠近但不知道怎麼靠近">🌱 想靠近，但不知道怎麼靠近</button>
+            <button type="button" class="choice" data-value="看起來很熟其實還好">🙂 看起來很熟，其實還好</button>
+            <button type="button" class="choice" data-value="有一點害怕的對象">😳 有一點害怕的對象</button>
+            <button type="button" class="choice" data-value="還在互相認識">❓ 我們目前還在互相認識</button>
+          </div>
+          <input type="hidden" name="chineseRelationship" required>
+
+          <label>如果用一句話形容你過去的國文課，你會說：</label>
+          <textarea name="pastChineseClass" maxlength="250" placeholder="例如：有時候很有趣，有時候不知道自己在背什麼。"></textarea>
+
+          <label>你比較喜歡國文課的哪一部分？<span class="hint">可複選</span></label>
+          <div class="check-grid" data-check-group="favorites">
+            <label class="check"><input type="checkbox" value="閱讀文章"><span>閱讀文章</span></label>
+            <label class="check"><input type="checkbox" value="小說／散文"><span>小說／散文</span></label>
+            <label class="check"><input type="checkbox" value="詩"><span>詩</span></label>
+            <label class="check"><input type="checkbox" value="古文"><span>古文</span></label>
+            <label class="check"><input type="checkbox" value="寫作"><span>寫作</span></label>
+            <label class="check"><input type="checkbox" value="討論與發表"><span>討論與發表</span></label>
+            <label class="check"><input type="checkbox" value="聽故事／作品背景"><span>聽故事／作品背景</span></label>
+            <label class="check"><input type="checkbox" value="影片／圖片延伸"><span>影片／圖片延伸</span></label>
+            <label class="check wide"><input type="checkbox" value="我還在找自己喜歡的部分"><span>其實……我還在找自己喜歡的部分</span></label>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step" data-step="3">
+          <div class="step-kicker">03 / 我期待的國文課</div>
+          <h2>如果國文課<br>可以送你一樣東西……</h2>
+          <p class="step-intro">你最希望高中三年帶走什麼？</p>
+
+          <div class="check-list" data-check-group="expectations">
+            <label class="check"><input type="checkbox" value="更會表達自己的想法"><span>更會表達自己的想法</span></label>
+            <label class="check"><input type="checkbox" value="更會寫文章"><span>更會寫文章</span></label>
+            <label class="check"><input type="checkbox" value="閱讀能力變強"><span>閱讀能力變強</span></label>
+            <label class="check"><input type="checkbox" value="面對考試更有信心"><span>面對考試更有信心</span></label>
+            <label class="check"><input type="checkbox" value="認識更多有趣的作品"><span>認識更多有趣的作品</span></label>
+            <label class="check"><input type="checkbox" value="找到真正喜歡的作家／作品"><span>找到真正喜歡的作家／作品</span></label>
+            <label class="check"><input type="checkbox" value="更敢在大家面前說話"><span>更敢在大家面前說話</span></label>
+            <label class="check"><input type="checkbox" value="重新喜歡上國文"><span>重新喜歡上原本不喜歡的國文</span></label>
+            <label class="check"><input type="checkbox" value="其他"><span>其他</span></label>
+          </div>
+
+          <label>你最期待在我的國文課裡發生什麼？</label>
+          <textarea name="classHope" maxlength="300" placeholder="可以很具體，也可以只寫一句話。"></textarea>
+
+          <label>如果有一天，你開始喜歡國文，你覺得可能是因為什麼？</label>
+          <textarea name="whyLoveChinese" maxlength="300" placeholder="想不到也沒關係，可以寫「不知道」。"></textarea>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="step" data-step="4">
+          <div class="step-kicker">04 / 我有一點擔心的是……</div>
+          <h2>在翻開第一頁以前，<br>有沒有一點小小的擔心？</h2>
+          <p class="step-intro">不用說得很完整，我只是想先知道，這樣才能更好地陪你。</p>
+
+          <label>你對高中「國文課」有什麼擔心？</label>
+          <textarea name="worry" maxlength="350" placeholder="學習、考試、古文、作文、上台、發表、被點名、作業、跟不上同學……任何想到的都可以。"></textarea>
+
+          <label>老師怎麼做，會讓你在國文課比較有安全感？<span class="hint">可複選</span></label>
+          <div class="check-list compact" data-check-group="safety">
+            <label class="check"><input type="checkbox" value="先讓我想一下再回答"><span>先讓我想一下再回答</span></label>
+            <label class="check"><input type="checkbox" value="不要突然點我"><span>不要突然點我</span></label>
+            <label class="check"><input type="checkbox" value="可以先和同學討論"><span>可以先和同學討論</span></label>
+            <label class="check"><input type="checkbox" value="老師把要求講清楚"><span>老師把要求講清楚</span></label>
+            <label class="check"><input type="checkbox" value="允許不同答案但要說理由"><span>允許不同答案，但要說理由</span></label>
+            <label class="check"><input type="checkbox" value="其他"><span>其他</span></label>
+          </div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="step" data-step="5">
+          <div class="step-kicker">05 / 給老師的一頁</div>
+          <h2>最後，<br>我想聽你說一句話。</h2>
+          <p class="step-intro">這一題完全沒有標準答案。</p>
+
+          <label>有沒有什麼事情，是你希望老師在認識你的時候知道的？</label>
+          <textarea name="teacherMessage" maxlength="500" placeholder="可以是一件小事、一個期待、一個困擾，甚至只是一句想跟老師說的話。"></textarea>
+          <p class="soft-note">如果現在還沒有想說的，也完全沒關係。</p>
+
+          <div class="final-writing">
+            <div class="mini-label">✦ 第一頁的最後一行</div>
+            <p>如果讓你替自己的高中三年寫下一句話，你希望它是什麼？</p>
+            <textarea name="highSchoolSentence" maxlength="250" placeholder="＿＿＿＿＿＿＿＿＿＿＿＿"></textarea>
+          </div>
+        </div>
+
+        <div class="nav">
+          <button type="button" class="secondary-btn" id="prevBtn" hidden>← 上一題</button>
+          <button type="button" class="primary-btn" id="nextBtn">下一頁 →</button>
+          <button type="submit" class="primary-btn" id="submitBtn" hidden>交出我的第一頁 ✦</button>
+        </div>
+        <p id="error" class="error" role="alert"></p>
+      </form>
+    </section>
+
+    <section id="result" class="screen">
+      <div class="result-card">
+        <div class="result-icon">✦</div>
+        <div class="eyebrow">THANK YOU FOR WRITING</div>
+        <h2>謝謝你，<span id="resultName"></span></h2>
+        <p class="result-lead">把這些答案交給我。</p>
+        <div class="result-quote">
+          <strong>高中三年，是一本正在書寫的小說。</strong><br>
+          而今天，我們才剛剛寫下第一頁。
+        </div>
+        <div class="result-type">
+          <div class="mini-label">✦ 你的國文人格</div>
+          <div id="typeEmoji" class="type-emoji">📖</div>
+          <h3 id="typeTitle">故事旅人</h3>
+          <p id="typeTagline" class="type-tagline">你會在文字裡尋找故事，也在故事裡尋找自己</p>
+          <p id="typeDesc">你的答案會幫助老師更了解你，也會成為我設計國文課時的一點參考。</p>
+        </div>
+
+        <div class="result-note">
+          <span>小提醒</span>
+          這不是把你定義下來的標籤，只是我們故事的第一頁。
+        </div>
+        <p id="submitStatus" class="submit-status"></p>
+        <p class="closing">期待接下來，<br>一起在國文課裡，遇見更多故事。</p>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
